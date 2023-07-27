@@ -27,6 +27,5 @@ public class ExercicioPlanoOperadora {
         System.out.printf("Valor a pagar: R$ %.2f", totalPagar);
 
         sc.close();
-
     }
 }
