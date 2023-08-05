@@ -106,5 +106,90 @@ public class ExercicioVetores {
             }
         }
 
+        /*
+        Faça um programa que leia N números inteiros e armazene-os em um vetor. Em seguida, mostre na
+        tela todos os números pares, e também a quantidade de números pares.
+         */
+
+        System.out.print("Quantos números você vai digitar?");
+        n = sc.nextInt();
+        int[] vetorNumeros = new int[n];
+
+        for(int i = 0; i < n; i++){
+            System.out.print("Digite um número: ");
+            vetorNumeros[i] = sc.nextInt();
+        }
+
+        System.out.println("Números pares:");
+        int quantidadePares = 0;
+        for(int numero : vetorNumeros){
+            if(numero % 2 == 0) {
+                System.out.println(numero + "\t");
+                quantidadePares++;
+            }
+        }
+
+        System.out.printf("Quantidade de números pares: %d", quantidadePares);
+
+        /*
+        Faça um programa que leia N números reais e armazene-os em um vetor. Em seguida, mostrar na tela
+        o maior número do vetor (supor não haver empates). Mostrar também a posição do maior elemento,
+        considerando a primeira posição como 0 (zero).
+         */
+
+        System.out.print("Quantos números você vai digitar?");
+        n = sc.nextInt();
+
+        int[] vetorNumerosReais = new int[n];
+        for(int i = 0; i < n; i++){
+            System.out.print("Digite um número: ");
+            vetorNumerosReais[i] = sc.nextInt();
+        }
+
+        int maiorNumero = 0;
+        int posicaoMaiorNumero = 0;
+        for(int i = 0; i < n; i++){
+            if(vetorNumerosReais[i] > maiorNumero) {
+                maiorNumero = vetorNumerosReais[i];
+                posicaoMaiorNumero = i;
+            }
+        }
+
+        System.out.printf("Maior valor = %d\n", maiorNumero);
+        System.out.printf("Posição do maior valor = %d\n", posicaoMaiorNumero);
+
+        /*
+        Faça um programa para ler dois vetores A e B, contendo N elementos cada. Em seguida, gere um
+        terceiro vetor C onde cada elemento de C é a soma dos elementos correspondentes de A e B. Imprima
+        o vetor C gerado.
+         */
+
+        System.out.print("Quantos valores terão so vetores?");
+        int quantidadeItens = sc.nextInt();
+
+        int[] vetorA = new int[quantidadeItens];
+        int[] vetorB = new int[quantidadeItens];
+        int[] vetorC = new int[quantidadeItens];
+
+        System.out.println("Digite os valores do vetor A:");
+        for(int i = 0; i < quantidadeItens; i++){
+            vetorA[i] = sc.nextInt();
+        }
+
+        System.out.println("Digite os valores do vetor B:");
+        for(int i = 0; i < quantidadeItens; i++){
+            vetorB[i] = sc.nextInt();
+        }
+
+        for(int i = 0; i < quantidadeItens; i++){
+            vetorC[i] = vetorA[i] + vetorB[i];
+        }
+
+        System.out.println("Vetor resultante:");
+        for(int numero : vetorC){
+            System.out.println(vetorC[numero]);
+        }
+
+        sc.close();
     }
 }
